@@ -1,6 +1,7 @@
 on:
   schedule:
     - cron: '*/1 * * * *'
+  workflow_dispatch:  # 👈 Add this line
 
 jobs:
   hello_world:
