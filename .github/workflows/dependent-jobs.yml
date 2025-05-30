@@ -1,4 +1,4 @@
-name: Job Without Depends
+name: Build, Test, and Deploy Workflow
 
 on:
   push:
@@ -9,11 +9,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Step A
-        run: echo "run step A"
-
-  deploy:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build application
+        run: echo "Building the application..."
+  test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Step B
-        run: echo "run step B"
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Test application
+        run: echo "Running tests..."
+  deploy:
+    needs: [build, test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Deploy application
+        run: echo "Deploying to production..."
