@@ -3,7 +3,7 @@ name: Schedule Event
 on:
   schedule:
     - cron: '*/5 * * * *'
-  workflow_dispatch:  # 👈 Add this line
+  workflow_dispatch:  # 👈 Add this line to manual trigger
 
 jobs:
   hello_world:
