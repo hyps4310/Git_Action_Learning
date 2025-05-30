@@ -1,0 +1,17 @@
+name: Custom Action
+
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - name: Hello world action step
+        id: hello
+        uses: hyps4310/custom_action@5751ff828fc838b8e587adc9a810b8370b753ddc
+        with:
+          who-to-greet: 'James Huang'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
