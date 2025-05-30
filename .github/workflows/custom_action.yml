@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: hyps4310/custom_action@v0.0.2
+        uses: hyps4310/custom_action@v0.0.3
         with:
           who-to-greet: 'James Huang'
       # Use the output from the `hello` step
