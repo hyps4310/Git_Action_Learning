@@ -1,0 +1,15 @@
+name: Job Without Depends
+
+on: ['push']
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      -  name: Step A
+         run: echo "Run Step A"
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      -  name: Step B
+         run: echo "Run Step B"
